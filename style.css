@@ -296,6 +296,124 @@ section {
     font-style: normal
 }
 
+.previous-events {
+    margin-top: 76px;
+    padding-top: 70px;
+    border-top: 1px solid #d6dfe5
+}
+
+.previous-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 34px
+}
+
+.previous-title h2 {
+    margin-top: 10px;
+    font-size: 48px
+}
+
+.previous-title p {
+    max-width: 360px;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.55;
+    font-size: 14px
+}
+
+.previous-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px
+}
+
+.past-event {
+    padding: 27px;
+    border-radius: 14px;
+    background: var(--navy);
+    color: #fff
+}
+
+.featured-event {
+    border: 2px solid var(--lime);
+    box-shadow: 8px 8px 0 #075dff;
+    cursor: pointer
+}
+
+.featured-event:focus { outline: 3px solid var(--blue); outline-offset: 4px }
+
+.past-event-top,.past-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px
+}
+
+.past-event-top { color: var(--lime) }
+.past-event-top b { padding: 6px 9px; border-radius: 20px; background: #c9f24a1f }
+.past-event h3 { margin: 19px 0 9px; font-size: 36px }
+.past-event>p { margin: 0; color: #b8c4ce; font-size: 14px }
+
+.honours {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 22px 0 0
+}
+
+.honours div { padding: 9px; border-left: 2px solid var(--lime); background: #ffffff0d }
+.honours span { display: block; color: #aebbc5; font-size: 10px; text-transform: uppercase }
+.honours strong { display: block; margin-top: 4px; color: #fff; font-size: 13px }
+
+.past-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 24px 0
+}
+
+.past-stats div { padding: 10px 8px; border-radius: 7px; background: #ffffff10; text-align: center }
+.past-stats strong { display: block; color: var(--lime); font: 700 25px 'Barlow Condensed' }
+.past-stats span { color: #aebbc5; font-size: 10px; text-transform: uppercase }
+.past-meta { padding-top: 16px; border-top: 1px solid #263645; color: #aebbc5 }
+.details-link { display:flex; justify-content:space-between; margin-top:18px; padding:12px 0 0; border-top:1px solid #263645; color:var(--lime); font-size:13px; font-weight:700; text-decoration:none }
+.details-link span { font-size:18px; line-height:.65 }
+
+.brand-link { color:var(--ink); text-decoration:none }
+.back-link { color:var(--blue); font-size:14px; font-weight:700; text-decoration:none }
+.tournament-hero { padding:90px 0; background:var(--navy); color:#fff }
+.tournament-hero h1 { margin-top:13px; font-size:clamp(58px,8vw,100px) }
+.tournament-hero p { max-width:570px; color:#b8c4ce; line-height:1.7 }
+.tournament-summary { display:grid; grid-template-columns:repeat(4,1fr); max-width:700px; margin-top:40px; border-top:1px solid #344554 }
+.tournament-summary div { padding:17px 18px 0 0 }
+.tournament-summary strong { display:block; color:var(--lime); font:800 40px 'Barlow Condensed' }
+.tournament-summary span,.section-label { color:#b8c4ce; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase }
+.awards { padding:48px 0; background:var(--lime) }
+.section-label { color:#355000 }
+.awards-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:18px }
+.awards-grid article { padding:20px; background:#ddf68a; border-radius:10px }
+.awards-grid span { color:#355000; font-size:10px; font-weight:700; letter-spacing:1px }
+.awards-grid h2 { margin:10px 0 7px; font-size:33px }
+.awards-grid p { margin:0; font-size:12px; line-height:1.5 }
+.teams-section { background:#f5f7f9 }
+.section-title { display:flex; justify-content:space-between; align-items:end; margin-bottom:34px }
+.section-title h2 { margin-top:10px; font-size:56px }
+.section-title p { max-width:350px; margin:0; color:var(--muted); line-height:1.6; font-size:14px }
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px }
+.team-card { overflow:hidden; border:1px solid #dce3e7; border-radius:13px; background:#fff }
+.team-card img { width:100%; height:180px; display:block; object-fit:cover }
+.team-card-body { padding:21px }
+.team-badge { display:inline-block; padding:5px 8px; border-radius:20px; background:#eaf0f4; color:var(--blue); font-size:10px; font-weight:700; letter-spacing:.7px }
+.team-badge.champion { background:#eaf9b8; color:#355000 }
+.team-card h3 { margin:13px 0 8px; font-size:34px }
+.team-card p { margin:0 0 15px; color:var(--muted); font-size:12px }
+.team-card ul { margin:0; padding:0; border-top:1px solid #e7ecef; list-style:none }
+.team-card li { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid #e7ecef; font-size:13px; font-weight:600 }
+.team-card li em { color:var(--muted); font-size:11px; font-style:normal; font-weight:400 }
+
 .stats-layout,
 .membership-box {
     display: grid;
@@ -465,6 +583,8 @@ form button {
     .hero-grid,
     .quick-grid,
     .event-grid,
+    .previous-grid,
+    .team-grid,
     .stats-layout,
     .membership-box {
         grid-template-columns: 1fr
@@ -479,15 +599,29 @@ form button {
         display: block
     }
 
+    .previous-title {
+        display: block
+    }
+
     .events header p {
         margin-top: 16px
     }
 
+    .previous-title p {
+        margin-top: 16px
+    }
+
     .events h2,
+    .previous-title h2,
     .stats-layout h2,
     .membership h2 {
         font-size: 49px
     }
+
+    .awards-grid { grid-template-columns:repeat(2,1fr) }
+    .tournament-summary { grid-template-columns:repeat(2,1fr) }
+    .section-title { display:block }
+    .section-title p { margin-top:16px }
 
     section {
         padding: 64px 0
