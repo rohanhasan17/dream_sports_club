@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Sports Club</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="wrap">
+    <div class="brand">
+      <div class="mark"><img src="/image/logo.png" alt="Logo" class="logo"></div> DREAM SPORTS CLUB
+    </div>
+    <div class="links"><a href="#events">Events</a><a href="#stats">Stats</a><a href="#join" class="join">Become a
+        Member</a></div>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Play together. Rise together.</div>
+          <h1>Where <em>dreams</em> play.</h1>
+          <p>Dream Sports Club is a spirited home for athletes, fans and future champions. Train hard, compete proudly,
+            and find your team.</p>
+          <div class="actions"><a class="button primary" href="#join">Join the Club</a><a class="button secondary"
+              href="#events">Explore Events</a></div>
+        </div>
+        <aside class="sport-card"><small>NEXT UP · 28 SEPTEMBER</small>
+          <div class="ball"></div>
+          <h3>CHAMPIONS<br>LEAGUE</h3>
+        </aside>
+      </div>
+    </section>
+    <div class="quick">
+      <div class="wrap quick-grid">
+        <div class="quick-item">
+          <div class="quick-num">350+</div>
+          <p>Active club members</p>
+        </div>
+        <div class="quick-item">
+          <div class="quick-num">24</div>
+          <p>Events this season</p>
+        </div>
+        <div class="quick-item">
+          <div class="quick-num">08</div>
+          <p>Championship titles</p>
+        </div>
+      </div>
+    </div>
+    <section class="events" id="events">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Get in the game</div>
+            <h2>Upcoming events</h2>
+          </div>
+          <p>There is always a new challenge around the corner. Register your team and make your mark.</p>
+        </div>
+        <div class="event-grid">
+          <article class="event">
+            <div class="event-tag">CRICKET · TOURNAMENT</div>
+            <h3>Dream Cup<br>2026</h3>
+            <div class="event-meta"><span>28–30 SEP</span><span>Central Field</span></div>
+          </article>
+          <article class="event">
+            <div class="event-tag">FOOTBALL · LEAGUE</div>
+            <h3>Night Football<br>League</h3>
+            <div class="event-meta"><span>12 OCT</span><span>Club Arena</span></div>
+          </article>
+          <article class="event">
+            <div class="event-tag">ATHLETICS · OPEN DAY</div>
+            <h3>Speed &amp; Strength<br>Challenge</h3>
+            <div class="event-meta"><span>26 OCT</span><span>Track Zone</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="stats">
+      <div class="wrap stats-layout">
+        <div class="stats-copy">
+          <div class="eyebrow">Season 2026</div>
+          <h2>Our game<br>in numbers.</h2>
+          <p>Follow the club's latest tournament performance, from the football pitch to the cricket field.</p>
+          <div class="stat-list">
+            <div class="stat-box"><strong>18</strong><span>Matches won</span></div>
+            <div class="stat-box"><strong>42</strong><span>Goals scored</span></div>
+            <div class="stat-box"><strong>1,284</strong><span>Runs scored</span></div>
+            <div class="stat-box"><strong>16</strong><span>Top players</span></div>
+          </div>
+        </div>
+        <div class="scoreboard">
+          <div class="score-title"><span>LATEST RESULTS</span><span>2026 SEASON</span></div>
+          <div class="match">
+            <div class="teams"><span>Dream FC</span><b class="score">3 — 1</b><span>Warriors FC</span></div>
+            <small>FOOTBALL LEAGUE · 08 SEP 2026</small>
+          </div>
+          <div class="match">
+            <div class="teams"><span>Dream XI</span><b class="score">186/6</b><span>Rangers</span></div><small>CRICKET
+              CUP · WON BY 24 RUNS</small>
+          </div>
+          <div class="match">
+            <div class="teams"><span>Dream FC</span><b class="score">2 — 0</b><span>United Youth</span></div>
+            <small>FOOTBALL LEAGUE · 01 SEP 2026</small>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="membership" id="join">
+      <div class="wrap membership-box">
+        <div>
+          <div class="eyebrow" style="color:#355000">YOUR TEAM IS WAITING</div>
+          <h2>Become part<br>of the dream.</h2>
+          <p>Sign up to receive membership updates, event announcements and your invitation to the next training
+            session.</p>
+        </div>
+        <form class="form" id="memberForm"><input required placeholder="First name" aria-label="First name"><input
+            required placeholder="Last name" aria-label="Last name"><input class="full" type="email" required
+            placeholder="Email address" aria-label="Email address"><select class="full" aria-label="Favorite sport">
+            <option value="">Choose your favorite sport</option>
+            <option>Cricket</option>
+            <option>Football</option>
+            <option>Athletics</option>
+            <option>Other</option>
+          </select><button class="button" type="submit">Send Membership Request →</button>
+          <div class="success" id="success">Thanks! Your membership request has been received.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap"><span>© 2026 DREAM SPORTS CLUB</span><span>PLAY WITH PURPOSE</span></div>
+  </footer>
+  <script>document.getElementById('memberForm').addEventListener('submit', function (e) { e.preventDefault(); document.getElementById('success').style.display = 'block'; this.querySelector('button').textContent = 'Request Sent ✓'; });</script>
+</body>
+
+</html>
