@@ -14,12 +14,14 @@
 </head>
 
 <body>
-  <nav class="wrap">
-    <div class="brand">
-      <div class="mark"><img src="/image/logo.png" alt="Logo" class="logo"></div> DREAM SPORTS CLUB
+  <nav class="site-nav">
+    <div class="wrap nav-content">
+      <a class="brand brand-link" href="index.html" aria-label="Dream Sports Club home">
+        <span class="logo-mark"><img src="image/logo.png" alt="Dream Sports Club logo" class="logo"></span>
+        <span>Dream <small>Sports Club</small></span>
+      </a>
+      <div class="links"><a href="#events">Events</a><a href="members.html">Members</a><a href="#stats">Stats</a><a href="#join" class="join">Become a Member <span>→</span></a></div>
     </div>
-    <div class="links"><a href="#events">Events</a><a href="#stats">Stats</a><a href="#join" class="join">Become a
-        Member</a></div>
   </nav>
   <main>
     <section class="hero">
@@ -159,16 +161,16 @@
           <p>Sign up to receive membership updates, event announcements and your invitation to the next training
             session.</p>
         </div>
-        <form class="form" id="memberForm"><input required placeholder="First name" aria-label="First name"><input
-            required placeholder="Last name" aria-label="Last name"><input class="full" type="email" required
-            placeholder="Email address" aria-label="Email address"><select class="full" aria-label="Favorite sport">
+        <form class="form" id="memberForm"><input id="firstName" required placeholder="First name" aria-label="First name"><input
+            id="lastName" required placeholder="Last name" aria-label="Last name"><input class="full" id="memberEmail" type="email" required
+            placeholder="Email address" aria-label="Email address"><input class="full" id="memberPassword" type="password" required minlength="6" placeholder="Create a password (minimum 6 characters)" aria-label="Password"><input class="full" id="memberPhone" type="tel" required placeholder="Phone number" aria-label="Phone number"><p class="profile-note">A profile avatar will be created automatically from your name.</p><select class="full" id="memberSport" required aria-label="Favorite sport">
             <option value="">Choose your favorite sport</option>
             <option>Cricket</option>
             <option>Football</option>
             <option>Athletics</option>
             <option>Other</option>
           </select><button class="button" type="submit">Send Membership Request →</button>
-          <div class="success" id="success">Thanks! Your membership request has been received.</div>
+          <div class="success" id="success" role="status"></div>
         </form>
       </div>
     </section>
@@ -176,7 +178,7 @@
   <footer>
     <div class="wrap"><span>© 2026 DREAM SPORTS CLUB</span><span>PLAY WITH PURPOSE</span></div>
   </footer>
-  <script>document.getElementById('memberForm').addEventListener('submit', function (e) { e.preventDefault(); document.getElementById('success').style.display = 'block'; this.querySelector('button').textContent = 'Request Sent ✓'; });</script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

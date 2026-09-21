@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Approval | Dream Sports Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-page">
+    <nav class="site-nav">
+        <div class="wrap nav-content"><a class="brand brand-link" href="index.html"><span class="logo-mark"><img
+                        src="image/logo.png" alt="Dream Sports Club logo" class="logo"></span><span>Dream <small>Sports
+                        Club</small></span></a></div>
+    </nav>
+    <main class="admin-main wrap">
+        <div class="admin-heading"><span class="eyebrow">Private area</span>
+            <h1>Member approval</h1>
+            <p>Review membership applications before publishing them on the Members page.</p>
+        </div>
+        <form id="adminLogin" class="admin-login"><input id="adminEmail" type="email" required
+                placeholder="Admin email"><input id="adminPassword" type="password" required
+                placeholder="Password"><button class="button" type="submit">Sign in</button></form>
+        <p id="adminMessage" class="admin-message"></p>
+        <section id="applications" class="applications" hidden>
+            <h2>Pending applications</h2>
+            <div id="applicationGrid" class="application-grid"></div>
+        </section>
+    </main>
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>
