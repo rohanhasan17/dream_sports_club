@@ -535,6 +535,11 @@ section {
     gap: 65px
 }
 
+.membership-box > *,
+.membership-box form {
+    min-width: 0
+}
+
 .membership .eyebrow {
     color: #355000
 }
@@ -550,8 +555,16 @@ section {
 
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px
+}
+
+.membership form input,
+.membership form select,
+.membership form button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
 }
 
 input,
