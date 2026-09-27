@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Profile | Dream Sports Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="members-page">
+  <nav class="site-nav">
+    <div class="wrap nav-content">
+      <a class="brand brand-link" href="index.html" aria-label="Dream Sports Club home"><span class="logo-mark"><img src="image/logo.png" alt="Dream Sports Club logo" class="logo"></span><span>Dream <small>Sports Club</small></span></a>
+      <div class="links"><a href="index.html#events">Events</a><a class="active-link" href="members.html">Members</a><a href="index.html#stats">Stats</a><a href="index.html#join" class="join">Become a Member <span>→</span></a></div>
+    </div>
+  </nav>
+  <main class="player-main wrap">
+    <a class="back-link" href="members.html">← All members</a>
+    <p id="playerMessage" class="member-loading" role="status">Loading player profile…</p>
+    <section id="playerProfile" class="player-profile" hidden>
+      <div class="player-hero">
+        <img id="playerPhoto" src="image/logo.png" alt="">
+        <div><span id="playerSport" class="member-sport"></span><h1 id="playerName"></h1><p>Dream Sports Club · Active member</p></div>
+      </div>
+      <div class="player-stats-grid">
+        <section class="player-stat-card"><span class="eyebrow">Cricket</span><h2>Career stats</h2><dl class="stat-tiles">
+          <div><dt>Matches played</dt><dd id="cricketMatches">0</dd></div><div><dt>Runs</dt><dd id="cricketRuns">0</dd></div><div><dt>Wickets</dt><dd id="cricketWickets">0</dd></div>
+        </dl></section>
+        <section class="player-stat-card"><span class="eyebrow">Football</span><h2>Career stats</h2><dl class="stat-tiles">
+          <div><dt>Matches played</dt><dd id="footballMatches">0</dd></div><div><dt>Goals</dt><dd id="footballGoals">0</dd></div><div><dt>Assists</dt><dd id="footballAssists">0</dd></div>
+        </dl></section>
+      </div>
+      <p class="stats-note">Player statistics are updated by the club administrator.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap"><span>© 2026 DREAM SPORTS CLUB</span><span>PLAY WITH PURPOSE</span></div></footer>
+  <script type="module" src="member-details.js"></script>
+</body>
+</html>
