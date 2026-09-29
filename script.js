@@ -14,12 +14,13 @@ form.addEventListener('submit', async (event) => {
   try {
     const firstName = document.querySelector('#firstName').value.trim();
     const lastName = document.querySelector('#lastName').value.trim();
+    const dateOfBirth = document.querySelector('#memberDob').value;
     const email = document.querySelector('#memberEmail').value.trim();
     const password = document.querySelector('#memberPassword').value;
     const account = await createUserWithEmailAndPassword(auth, email, password);
     const fullName = `${firstName} ${lastName}`;
     const photoURL = `https://api.dicebear.com/9.x/initials/svg?backgroundType=gradientLinear&seed=${encodeURIComponent(fullName)}`;
-    await addDoc(collection(db, 'memberApplications'), { uid: account.user.uid, firstName, lastName, email, phone: document.querySelector('#memberPhone').value.trim(), sport: document.querySelector('#memberSport').value, photoURL, status: 'pending', createdAt: serverTimestamp() });
+    await addDoc(collection(db, 'memberApplications'), { uid: account.user.uid, firstName, lastName, dateOfBirth, email, phone: document.querySelector('#memberPhone').value.trim(), sport: document.querySelector('#memberSport').value, photoURL, status: 'pending', createdAt: serverTimestamp() });
     form.reset();
     show('Application sent! It will appear on the Members page after admin approval.');
   } catch (error) {

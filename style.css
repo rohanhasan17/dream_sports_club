@@ -24,6 +24,7 @@ body {
 .wrap {
     max-width: 1180px;
     margin: auto;
+    text-align: center;
     padding: 0 28px
 }
 
@@ -69,6 +70,9 @@ h3 {
 
 .links a:hover { color:var(--blue) }
 .links a.active-link { color:var(--lime) }
+.links a.admin-link { display:inline-flex; align-items:center; gap:7px; padding:9px 12px; border:1px solid #526170; border-radius:8px; color:#e4edf3; background:#ffffff08 }
+.links a.admin-link:hover,.links a.admin-link.active-link { border-color:var(--lime); color:var(--lime) }
+.admin-link.is-signed-in { border-color:#7cae19 !important; background:#c9f24a18 !important; color:var(--lime) !important }
 .menu-toggle { display:none; border:1px solid #496070; border-radius:8px; background:transparent; width:42px; height:40px; padding:9px; cursor:pointer }
 .menu-toggle span { display:block; height:2px; margin:4px 0; background:#fff; border-radius:2px }
 
@@ -447,7 +451,7 @@ section {
 .member-summary { display:grid; grid-template-columns:repeat(3,1fr); max-width:560px; margin-top:38px; border-top:1px solid #ffffff2e }
 .member-summary div { padding:15px 18px 0 0 }.member-summary strong { display:block; color:var(--lime); font:800 39px 'Barlow Condensed' }.member-summary span { color:#b8c4ce; font-size:11px; font-weight:700; text-transform:uppercase }
 .members-directory { background:#f5f7f9 }.member-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px }
-.member-card { overflow:hidden; border:1px solid #dce3e7; border-radius:13px; background:#fff }.member-card>img { width:100%; height:230px; display:block; object-fit:cover }.member-card>div { padding:21px }.member-sport { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:1px }.member-card h3 { margin:12px 0 7px; font-size:36px }.member-card p { margin:0 0 18px; color:var(--muted); font-size:13px }.member-card dl { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin:0; padding-top:14px; border-top:1px solid #e7ecef }.member-card dl div { min-width:0 }.member-card dt { color:var(--muted); font-size:10px; text-transform:uppercase }.member-card dd { margin:3px 0 0; font:700 17px 'Barlow Condensed'; overflow-wrap:anywhere }
+.member-card { overflow:hidden; border:1px solid #dce3e7; border-radius:13px; background:#fff }.member-card>img { width:100%; height:230px; display:block; object-fit:cover }.member-card>div { padding:21px }.member-sport { color:var(--blue); font-size:10px; font-weight:700; letter-spacing:1px }.member-card h3 { margin:12px 0 7px; font-size:36px }.member-card p { margin:0 0 18px; color:var(--muted); font-size:13px }.member-card dl { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; margin:0; padding-top:14px; border-top:1px solid #e7ecef }.member-card dl div { min-width:0 }.member-card dt { color:var(--muted); font-size:10px; text-transform:uppercase }.member-card dd { margin:3px 0 0; font:700 17px 'Barlow Condensed'; overflow-wrap:anywhere }
 
 .member-loading,.empty-members { color:var(--muted) }
 .member-details-link { display:inline-flex; gap:8px; margin-top:17px; color:var(--blue); font-size:12px; font-weight:700; text-decoration:none }
@@ -659,6 +663,7 @@ form button {
     .links { display:none; position:absolute; top:calc(100% + 1px); left:0; right:0; z-index:21; padding:12px 20px 18px; background:#071725; border-bottom:1px solid #294052; align-items:stretch; gap:0; flex-direction:column }
     .links.is-open { display:flex }
     .links a, .links a:not(.join) { display:block; padding:12px 4px; font-size:15px }
+    .links a.admin-link { display:flex; width:100%; justify-content:space-between; padding:12px; margin:4px 0; }
     .links .join { margin-top:8px; padding:12px; font-size:13px; text-align:center }
     .event-grid .upcoming-event { grid-template-columns:1fr; }
     .event-art { min-height:140px; }

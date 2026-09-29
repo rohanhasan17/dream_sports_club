@@ -21,10 +21,11 @@
         <span>Dream <small>Sports Club</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button>
-      <div class="links" id="siteLinks"><a href="index.html">Home</a><a href="index.html#events">Events</a><a href="members.html">Members</a><a href="tournament-details.html">Tournament</a><a href="index.html#stats">Stats</a><a href="admin.html">Admin</a><a href="index.html#join" class="join">Become a Member <span>→</span></a></div>
+      <div class="links" id="siteLinks"><a href="index.html">Home</a><a href="index.html#events">Events</a><a href="members.html">Members</a><a href="tournament-details.html">Tournament</a><a href="index.html#stats">Stats</a><a class="admin-link" href="admin.html">Admin</a><a href="index.html#join" class="join">Become a Member <span>→</span></a></div>
     </div>
   </nav>
   <script src="nav.js" defer></script>
+  <script type="module" src="admin-status.js"></script>
   <script type="module" src="active-members.js"></script>
   <main>
     <section class="hero">
@@ -150,7 +151,7 @@
         </div>
         <form class="form" id="memberForm"><input id="firstName" required placeholder="First name" aria-label="First name"><input
             id="lastName" required placeholder="Last name" aria-label="Last name"><input class="full" id="memberEmail" type="email" required
-            placeholder="Email address" aria-label="Email address"><input class="full" id="memberPassword" type="password" required minlength="6" placeholder="Create a password (minimum 6 characters)" aria-label="Password"><input class="full" id="memberPhone" type="tel" required placeholder="Phone number" aria-label="Phone number"><p class="profile-note">A profile avatar will be created automatically from your name.</p><select class="full" id="memberSport" required aria-label="Favorite sport">
+            placeholder="Email address" aria-label="Email address"><input class="full" id="memberDob" type="date" required aria-label="Date of birth" title="Date of birth"><input class="full" id="memberPassword" type="password" required minlength="6" placeholder="Create a password (minimum 6 characters)" aria-label="Password"><input class="full" id="memberPhone" type="tel" required placeholder="Phone number" aria-label="Phone number"><p class="profile-note">A profile avatar will be created automatically from your name.</p><select class="full" id="memberSport" required aria-label="Favorite sport">
             <option value="">Choose your favorite sport</option>
             <option>Cricket</option>
             <option>Football</option>
@@ -164,7 +165,7 @@
     </section>
   </main>
   <footer>
-    <div class="wrap"><span>© 2026 DREAM SPORTS CLUB</span><span>PLAY WITH PURPOSE</span></div>
+    <div class="wrap"><span>© 2026 DREAM SPORTS CLUB</span><span> PLAY WITH PURPOSE</span></div>
   </footer>
   <script type="module" src="script.js"></script>
 </body>
