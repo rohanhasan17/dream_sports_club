@@ -20,9 +20,11 @@
         <span class="logo-mark"><img src="image/logo.png" alt="Dream Sports Club logo" class="logo"></span>
         <span>Dream <small>Sports Club</small></span>
       </a>
-      <div class="links"><a href="#events">Events</a><a href="members.html">Members</a><a href="#stats">Stats</a><a href="admin.html">Admin</a><a href="#join" class="join">Become a Member <span>→</span></a></div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteLinks"><span></span><span></span><span></span></button>
+      <div class="links" id="siteLinks"><a href="index.html">Home</a><a href="index.html#events">Events</a><a href="members.html">Members</a><a href="tournament-details.html">Tournament</a><a href="index.html#stats">Stats</a><a href="admin.html">Admin</a><a href="index.html#join" class="join">Become a Member <span>→</span></a></div>
     </div>
   </nav>
+  <script src="nav.js" defer></script>
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
@@ -66,10 +68,15 @@
           <p>There is always a new challenge around the corner. Register your team and make your mark.</p>
         </div>
         <div class="event-grid">
-          <article class="event">
-            <div class="event-tag">FOOTBALL · TOURNAMENT</div>
-            <h3>Dream Football<br>Tournament 2026</h3>
-            <div class="event-meta"><span>STARTS 20 OCT, </span><span>Club Arena</span></div>
+          <article class="event upcoming-event">
+            <div class="event-art" aria-hidden="true"><span>⚽</span><i>2026<br>SEASON</i></div>
+            <div class="event-content">
+              <div class="event-topline"><span class="event-tag">⚡ UPCOMING · FOOTBALL</span><span class="event-status"><i></i> GET READY</span></div>
+              <h3>Dream Football<br><em>Tournament 2026</em></h3>
+              <p class="event-teaser">One pitch. Big dreams. The next chapter starts here.</p>
+              <div class="event-meta"><span><b>20</b> OCTOBER 2026</span><span>📍 &nbsp;Club Arena</span></div>
+              <a class="event-cta" href="#join">Count me in <span>→</span></a>
+            </div>
           </article>
         </div>
         <div class="previous-events">
@@ -146,6 +153,7 @@
             <option value="">Choose your favorite sport</option>
             <option>Cricket</option>
             <option>Football</option>
+            <option>Badminton</option>
             <option>Athletics</option>
             <option>Other</option>
           </select><button class="button" type="submit">Send Membership Request →</button>

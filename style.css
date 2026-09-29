@@ -69,6 +69,8 @@ h3 {
 
 .links a:hover { color:var(--blue) }
 .links a.active-link { color:var(--lime) }
+.menu-toggle { display:none; border:1px solid #496070; border-radius:8px; background:transparent; width:42px; height:40px; padding:9px; cursor:pointer }
+.menu-toggle span { display:block; height:2px; margin:4px 0; background:#fff; border-radius:2px }
 
 .links .join,
 .button {
@@ -261,6 +263,40 @@ section {
     border-radius: 12px;
     background: #fff
 }
+
+.event-grid .upcoming-event {
+    position:relative;
+    display:grid;
+    grid-template-columns: 210px 1fr;
+    gap:0;
+    grid-column:1 / -1;
+    overflow:hidden;
+    min-height:285px;
+    padding:0;
+    border:1px solid #234257;
+    border-radius:20px;
+    color:#fff;
+    background:linear-gradient(112deg,#071725 0%,#0d2638 63%,#123650 100%);
+    box-shadow:0 20px 50px #07172520
+}
+.upcoming-event:before { content:''; position:absolute; width:310px; height:310px; right:-90px; top:-155px; border:1px solid #c9f24a30; border-radius:50%; box-shadow:0 0 0 35px #c9f24a0c,0 0 0 70px #c9f24a08; pointer-events:none }
+.event-art { position:relative; display:grid; place-items:center; overflow:hidden; min-height:285px; background:linear-gradient(145deg,#075dff,#00348b) }
+.event-art:before,.event-art:after { content:''; position:absolute; width:200px; height:200px; border:1px solid #ffffff30; border-radius:50% }
+.event-art:after { width:145px; height:145px }
+.event-art span { z-index:1; font-size:82px; filter:drop-shadow(0 12px 12px #001c4c66); transform:rotate(-12deg) }
+.event-art i { position:absolute; left:16px; bottom:16px; padding:7px 10px; border-radius:7px; background:var(--lime); color:var(--navy); font:800 10px/1.1 'DM Sans'; letter-spacing:1px; font-style:normal }
+.event-content { z-index:1; padding:28px 34px; text-align:left }
+.event-topline { display:flex; justify-content:space-between; align-items:center; gap:12px }
+.event-tag { color:var(--lime); font-size:11px; font-weight:800; letter-spacing:1.2px }
+.event-status { display:flex; align-items:center; gap:7px; color:#c5d3dd; font-size:10px; font-weight:700; letter-spacing:1px }
+.event-status i { width:7px; height:7px; border-radius:50%; background:var(--lime); box-shadow:0 0 12px var(--lime) }
+.event-content h3 { margin:20px 0 8px; color:#fff; font-size:clamp(32px,4vw,48px); line-height:.95 }
+.event-content h3 em { color:var(--lime); font-style:normal }
+.event-teaser { margin:0; color:#b8c4ce; font-size:14px }
+.event-meta { display:flex; gap:25px; margin-top:20px; padding-top:15px; border-top:1px solid #ffffff20; color:#d5e3eb; font-size:11px; font-weight:700; letter-spacing:.6px }
+.event-meta b { margin-right:4px; color:var(--lime); font:800 22px 'Barlow Condensed'; vertical-align:-2px }
+.event-cta { display:inline-flex; align-items:center; gap:18px; margin-top:18px; padding:11px 16px; border-radius:8px; background:var(--lime); color:var(--navy); font-size:12px; font-weight:800; text-decoration:none; transition:transform .2s ease,box-shadow .2s ease }
+.event-cta:hover { transform:translateY(-2px); box-shadow:0 7px 20px #c9f24a33 }
 
 .event-grid article>span {
     color: var(--blue);
@@ -612,16 +648,26 @@ form button {
 }
 
 @media(max-width:760px) {
-
-    .links a:not(.join),
     .sport-card {
         display: none
     }
 
-    .nav-content { height:72px }
+    .nav-content { height:72px; position:relative }
     .brand { font-size:24px }
     .logo-mark { width:43px; height:43px; border-radius:13px }
-    .links .join { padding:10px 12px; font-size:12px }
+    .menu-toggle { display:block; margin-left:auto }
+    .links { display:none; position:absolute; top:calc(100% + 1px); left:0; right:0; z-index:21; padding:12px 20px 18px; background:#071725; border-bottom:1px solid #294052; align-items:stretch; gap:0; flex-direction:column }
+    .links.is-open { display:flex }
+    .links a, .links a:not(.join) { display:block; padding:12px 4px; font-size:15px }
+    .links .join { margin-top:8px; padding:12px; font-size:13px; text-align:center }
+    .event-grid .upcoming-event { grid-template-columns:1fr; }
+    .event-art { min-height:140px; }
+    .event-art span { font-size:65px }
+    .event-content { padding:23px 20px 24px }
+    .event-topline { align-items:flex-start }
+    .event-status { font-size:9px }
+    .event-content h3 { font-size:37px }
+    .event-meta { flex-wrap:wrap; gap:10px 20px }
 
     .hero {
         padding: 65px 0
