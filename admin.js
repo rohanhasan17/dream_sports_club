@@ -6,20 +6,36 @@ const login = document.querySelector('#adminLogin');
 const message = document.querySelector('#adminMessage');
 const area = document.querySelector('#applications');
 const grid = document.querySelector('#applicationGrid');
+const approvedGrid = document.querySelector('#approvedMemberGrid');
 let isAdmin = false;
+const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 if (!isFirebaseConfigured) message.textContent = 'Add Firebase configuration in firebase-config.js first.';
 login.addEventListener('submit', async (event) => { event.preventDefault(); try { await signInWithEmailAndPassword(auth, document.querySelector('#adminEmail').value, document.querySelector('#adminPassword').value); } catch { message.textContent = 'Sign-in failed. Check the email and password.'; } });
 if (isFirebaseConfigured) onAuthStateChanged(auth, async (user) => {
   if (!user) return;
   const admin = await getDoc(doc(db, 'admins', user.uid));
   if (!admin.exists()) { message.textContent = 'This account is not an approved administrator.'; return; }
-  isAdmin = true; login.hidden = true; area.hidden = false; loadApplications();
+  isAdmin = true; login.hidden = true; area.hidden = false; loadApplications(); loadMembers();
 });
 async function loadApplications() {
   const results = await getDocs(query(collection(db, 'memberApplications'), orderBy('createdAt', 'desc')));
   grid.innerHTML = results.docs.length ? results.docs.map((item) => { const member = item.data(); return `<article class="application-card"><img src="${member.photoURL}" alt="${member.firstName}"><div><span>${member.sport}</span><h3>${member.firstName} ${member.lastName}</h3><p>${member.email}<br>${member.phone}</p><button data-approve="${item.id}">Approve member</button><button class="reject" data-reject="${item.id}">Reject</button></div></article>`; }).join('') : '<p>No pending applications.</p>';
   grid.querySelectorAll('[data-approve]').forEach((button) => button.addEventListener('click', () => approve(button.dataset.approve)));
   grid.querySelectorAll('[data-reject]').forEach((button) => button.addEventListener('click', () => reject(button.dataset.reject)));
+}
+async function loadMembers() {
+  const results = await getDocs(query(collection(db, 'members'), orderBy('approvedAt', 'desc')));
+  approvedGrid.innerHTML = results.docs.length ? results.docs.map((item) => {
+    const member = item.data();
+    const name = `${member.firstName || ''} ${member.lastName || ''}`.trim();
+    return `<article class="application-card"><img src="${escapeHTML(member.photoURL || 'image/logo.png')}" alt="${escapeHTML(name)}"><div><span>${escapeHTML(member.sport || 'Member')}</span><h3>${escapeHTML(name)}</h3><p>${escapeHTML(member.email || '')}<br>${escapeHTML(member.phone || '')}</p><button class="reject" data-delete-member="${escapeHTML(item.id)}">Delete member</button></div></article>`;
+  }).join('') : '<p>No approved members.</p>';
+  approvedGrid.querySelectorAll('[data-delete-member]').forEach((button) => button.addEventListener('click', () => removeMember(button.dataset.deleteMember)));
+}
+async function removeMember(id) {
+  if (!isAdmin || !confirm('Delete this member? This will remove them from the public Members page.')) return;
+  await deleteDoc(doc(db, 'members', id));
+  loadMembers();
 }
 async function approve(id) { if (!isAdmin) return; const application = await getDoc(doc(db, 'memberApplications', id)); const member = application.data(); await setDoc(doc(db, 'members', member.uid), { ...member, status: 'approved', approvedAt: serverTimestamp() }); await deleteDoc(doc(db, 'memberApplications', id)); loadApplications(); }
 async function reject(id) { if (!isAdmin || !confirm('Reject this application?')) return; await deleteDoc(doc(db, 'memberApplications', id)); loadApplications(); }
